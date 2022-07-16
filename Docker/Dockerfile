@@ -11,4 +11,4 @@ FROM base as runtime
 WORKDIR /app
 COPY --from=build /build .
 ENV CHART_PATH=/var/www/helm-repo/charts
-ENTRYPOINT["dotnet", "helm-repo.dll"]
+ENTRYPOINT ["dotnet", "helm-repo.dll"]
