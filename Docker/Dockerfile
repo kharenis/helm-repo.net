@@ -4,7 +4,7 @@ COPY ./src /src
 RUN dotnet build -c Release -o /build
 
 FROM mcr.microsoft.com/dotnet/runtime:6.0-alpine as base
-RUN apk --no-cache add curl bash
+RUN apk --no-cache add curl bash openssl
 RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 FROM base as runtime
