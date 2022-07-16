@@ -1,6 +1,6 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
 WORKDIR /src
-COPY . /src
+COPY ./src /src
 RUN dotnet build -c Release -o /build
 
 FROM mcr.microsoft.com/dotnet/runtime:6.0-alpine as base
